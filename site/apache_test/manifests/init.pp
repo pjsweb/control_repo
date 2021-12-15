@@ -7,4 +7,3 @@ class apache_test {
     content => 'test content',
   }
 }
-© 2021 GitHub, I
