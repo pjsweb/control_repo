@@ -4,6 +4,7 @@ class apache_test {
   }
   file {'/opt/apache_test/index.html':
     ensure => file,
-    content => 'test content',
+    #content => 'test content',
+    source => 'puppet:///modules/apache_test/index.html',
   }
 }
