@@ -7,4 +7,11 @@ class apache_test {
     #content => 'test content',
     source => 'puppet:///modules/apache_test/index.html',
   }
+  file {'/etc/httpd/conf.d':
+    eusure => directory,
+  }
+  file {'/etc/httpd/conf.d/tomcat.txt':
+    ensure => file,
+    source => 'puppet:///modules/apache_test/tomcat.txt',
+  }
 }
