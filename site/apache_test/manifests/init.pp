@@ -8,7 +8,7 @@ class apache_test {
     source => 'puppet:///modules/apache_test/index.html',
   }
   file {'/etc/httpd/conf.d':
-    eusure => directory,
+    eusure => present,
   }
   file {'/etc/httpd/conf.d/tomcat.txt':
     ensure => file,
