@@ -1,0 +1,48 @@
+# tomcat hosted pages (not through Virtual Host Monster)
+# 03-May-2006 include other non Virtual Host Monster pages here for now
+# 25-May-2006 change example - allow target to be 'root' folder
+#
+#               This is the mapping from virtual folders on www.bris.ac.uk to folders on other servers
+#               You do not need to restart apache after changing this file
+#
+# Example use:
+#
+#     RewriteMap  tomcat              txt:/usr/local/apache/conf/tomcat.txt
+#     #
+# 1)  RewriteCond ${tomcat:$1}        ^([a-z0-9.-]+):([0-9]+)(/.+)?$
+# 2)  RewriteRule ^/([^/]+)(/.*)?$    http://%1:%2%3$2 [P]
+#
+# 2/LHS: Get the top level folder ($1) and rest of path ($2).
+# 1/LHS: Look this up in tomcat.txt; Returns null if not found.
+# 1/RHS: Parse this into host (%1), port (%2) and path_to_folder (%3);
+#        Next rule if cannot.
+# 2/RHS: Put these pieces back together for proxy.
+#
+#
+academic-child-health/news/news-results.html    java-t4sm-p1.web.bris.ac.uk:8888/structured-search/news-results-solr
+accommodation/announcements/news-results.html   java-t4sm-p1.web.bris.ac.uk:8888/structured-search/news-results-solr
+accounting-finance/news/news-results.html       java-t4sm-p1.web.bris.ac.uk:8888/structured-search/news-results-solr
+#accounting/people                      dbms.services.bris.ac.uk:80/accounting/people
+academic-quality/study-abroad-conversion        study-abroad-conversion.neptune2-prod.bris.ac.uk:80/academic-quality/study-abroad-conversion
+academicregistry/unit-prog-catalogues   unit-programme-catalogue.neptune-prod.bris.ac.uk:80/unit-programme-catalogue
+academicregistry/upms                   upms.neptune-prod.bris.ac.uk:80/esu/approvalprocess
+alert/updates/news-results.html         java-t4sm-p1.web.bris.ac.uk:8888/structured-search/news-results-solr
+alspac/news/news-results.html           java-t4sm-p1.web.bris.ac.uk:8888/structured-search/news-results-solr
+# below entry is to test the new solr/structured search install on java-t4sm-p1
+# alspac/news/news-results.html           java-t4sm-p1.web.bris.ac.uk:8888/structured-search/news-results-solr
+alumni/news/news-results.html           java-t4sm-p1.web.bris.ac.uk:8888/structured-search/news-results-solr
+alumni/alumni-stories/news-results.html java-t4sm-p1.web.bris.ac.uk:8888/structured-search/news-results-solr
+amr/news/news-results.html              java-t4sm-p1.web.bris.ac.uk:8888/structured-search/news-results-solr
+anatomy/news/news-results.html          java-t4sm-p1.web.bris.ac.uk:8888/structured-search/news-results-solr
+anatomy/vesalius/news/news-results.html java-t4sm-p1.web.bris.ac.uk:8888/structured-search/news-results-solr
+archanth/news/news-results.html         java-t4sm-p1.web.bris.ac.uk:8888/structured-search/news-results-solr
+archanth/research/bookshelf/news-results.html   java-t4sm-p1.web.bris.ac.uk:8888/structured-search/news-results-solr
+art-cc/news/news-results.html           java-t4sm-p1.web.bris.ac.uk:8888/structured-search/news-results-solr
+arthistory/news/news-results.html       java-t4sm-p1.web.bris.ac.uk:8888/structured-search/news-results-solr
+arthistory/research/bookshelf/news-results.html java-t4sm-p1.web.bris.ac.uk:8888/structured-search/news-results-solr
+arts/research/black-arts-humanities/news/news-results.html java-t4sm-p1.web.bris.ac.uk:8888/structured-search/news-results-solr
+arts/research/collaborations/igrct/bookshelf/news-results.html  java-t4sm-p1.web.bris.ac.uk:8888/structured-search/news-results-solr
+arts/research/collaborations/igrct/news/news-results.html       java-t4sm-p1.web.bris.ac.uk:8888/structured-search/news-results-solr
+arts/research/global-radio-history/blog/news-results.html       java-t4sm-p1.web.bris.ac.uk:8888/structured-search/news-results-solr
+arts/research/literary-archaeology/blog/news-results.html       java-t4sm-p1.web.bris.ac.uk:8888/structured-search/news-results-solr
+arts/research/performing-documents/news/news-results.html       java-t4sm-p1.web.bris.ac.uk:8888/structured-search/news-results-solr
